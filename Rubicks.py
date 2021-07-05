@@ -1,7 +1,7 @@
 def Main():
-    #####################
-    #Variable assignment#
-    #####################
+    #######################
+    # Variable assignment #
+    #######################
 
     f1=f2=f3=f4=f5=f6=f7=f8=f9="G"      #Front face
     l1=l2=l3=l4=l5=l6=l7=l8=l9="O"      #Left face
@@ -9,6 +9,25 @@ def Main():
     u1=u2=u3=u4=u5=u6=u7=u8=u9="Y"      #Bottom face
     t1=t2=t3=t4=t5=t6=t7=t8=t9="W"      #Top face
     b1=b2=b3=b4=b5=b6=b7=b8=b9="B"      #Back face
+
+    ###############################################################
+    # Visualisation of the values #
+    #                
+                    #______________#
+                    # T1 | T2 | T3 #
+                    # T4 | T5 | T6 #
+                    # T7 | T8 | T9 #
+    #_______________#______________#_____________________________#
+    # L1 | L2 | L3  # F1 | F2 | F3 # R1 | R2 | R3 # B1 | B2 | B3 #
+    # L4 | L5 | L6  # F4 | F5 | F6 # R4 | R5 | R6 # B4 | B5 | B6 #
+    # L7 | L8 | L9  # F7 | F8 | F9 # R7 | R8 | R9 # B7 | B8 | B9 #
+    #_______________#______________#_____________________________#
+                    # U1 | U2 | U3 #
+                    # U4 | U5 | U6 #
+                    # U7 | U8 | U9 #
+                    #______________#
+
+    ################################################################
 
     Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
@@ -48,10 +67,10 @@ def Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r
 def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9):
         move = input("Please type first move (F, F', R, R', U, U', B, B', L, L', D, D', where ' denotes an anticlockwise move ")
 
-        ################
-        #Move instances#
-        ################
-#F MOVES ARE GOOD
+        ##################
+        # Move instances #
+        ##################
+
         if move == "F":
             newt1=l3
             newt2=l6
@@ -121,7 +140,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
 
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-#R MOVES ARE FINALLY GOOD
+
         if move == "R":
             newt1=f3
             newt2=f6
@@ -191,7 +210,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
 
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-#U MOVES ARE GOOD
+
         if move == "U":
             # U move affects Front, Right, Left, Back
             newf1=r1
@@ -262,7 +281,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
                 Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-#B MOVES ARE GOOD
+
         if move == "B":
             #B Move affects Right, Top, Left, Bottom
             newr1=u9
@@ -332,7 +351,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
                 Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-#L MOVES ARE GOOD
+
         if move == "L":
             #L move affects Front, Top, Back, Bottom
             newt1=b9
@@ -403,7 +422,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
                 Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-#D MOVES ARE GOOD
+
         if move == "D":
             #D move affects Front, Right, Back, Left
             newf1=l7
