@@ -33,7 +33,7 @@ def Main():
 
 def Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9):
     #There's probably a better way to do this, but this will work for demonstration purposes
-    print("The completed Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9) cube is as follows:")
+    print("The completed Rubicks cube is as follows:")
     print("Front Face:")
     print(f1 + " " + f2 + " " + f3)
     print(f4 + " " + f5 + " " + f6)
@@ -71,7 +71,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
         # Move instances #
         ##################
 
-        if move == "F":
+        if move == "F" or "f":
+
+            # These handle the rotate around the edges of the moved side
             newt1=l3
             newt2=l6
             newt3=l9
@@ -98,15 +100,36 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             l6=newl2
             l9=newl3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=f7
+            newtop2=f4
+            newtop3=f1
+            newtop4=f8
+            newtop6=f2
+            newtop7=f9
+            newtop8=f6
+            newtop9=f3
+
+            f1=newtop1
+            f2=newtop2
+            f3=newtop3
+            f4=newtop4
+            f6=newtop6
+            f7=newtop7
+            f8=newtop8
+            f9=newtop9
+
             cont = input("Would you like to make another move? ")
 
-            if cont == "yes":
+            if cont == "yes" or "Yes":
                 Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
-            if cont == "no":
+            if cont == "no" or "No":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
         
-        if move == "F'":
+        if move == "F'" or "f'":
+
+            # These handle the rotate around the edges of the moved side
             newt1=r1
             newt2=r4
             newt3=r7
@@ -133,6 +156,26 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             l6=newl2
             l9=newl3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=f3
+            newtop2=f6
+            newtop3=f9
+            newtop4=f2
+            newtop6=f8
+            newtop7=f1
+            newtop8=f4
+            newtop9=f7
+
+            f1=newtop1
+            f2=newtop2
+            f3=newtop3
+            f4=newtop4
+            f6=newtop6
+            f7=newtop7
+            f8=newtop8
+            f9=newtop9
+
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -141,7 +184,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
-        if move == "R":
+        if move == "R" or "r":
+
+            # These handle the rotate around the edges of the moved side
             newt1=f3
             newt2=f6
             newt3=f9
@@ -168,6 +213,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             f6=newf2
             f9=newf3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=r7
+            newtop2=r4
+            newtop3=r1
+            newtop4=r8
+            newtop6=r2
+            newtop7=r9
+            newtop8=r6
+            newtop9=r3
+
+            r1=newtop1
+            r2=newtop2
+            r3=newtop3
+            r4=newtop4
+            r6=newtop6
+            r7=newtop7
+            r8=newtop8
+            r9=newtop9
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -176,32 +240,53 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
         
-        if move == "R'":
-            newt1=b1#
-            newt2=b4#
-            newt3=b7#
-            newb1=u9#
-            newb2=u6#
-            newb3=u3#
-            newu1=f3#
-            newu2=f6#
-            newu3=f9#
+        if move == "R'" or "r'":
+
+            # These handle the rotate around the edges of the moved side
+            newt1=b1
+            newt2=b4
+            newt3=b7
+            newb1=u9
+            newb2=u6
+            newb3=u3
+            newu1=f3
+            newu2=f6
+            newu3=f9
             newf1=t3
             newf2=t6
             newf3=t9
 
-            t9=newt1#
-            t6=newt2#
-            t3=newt3#
-            b1=newb1#
-            b4=newb2#
-            b7=newb3#
-            u3=newu1#
-            u6=newu2#
-            u9=newu3#
+            t9=newt1
+            t6=newt2
+            t3=newt3
+            b1=newb1
+            b4=newb2
+            b7=newb3
+            u3=newu1
+            u6=newu2
+            u9=newu3
             f3=newf1
             f6=newf2
             f9=newf3
+
+            #This handles the rotation of the square that is being moved
+            newtop1=r3
+            newtop2=r6
+            newtop3=r9
+            newtop4=r2
+            newtop6=r8
+            newtop7=r1
+            newtop8=r4
+            newtop9=r7
+
+            r1=newtop1
+            r2=newtop2
+            r3=newtop3
+            r4=newtop4
+            r6=newtop6
+            r7=newtop7
+            r8=newtop8
+            r9=newtop9
 
             cont = input("Would you like to make another move? ")
 
@@ -211,8 +296,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
-        if move == "U":
-            # U move affects Front, Right, Left, Back
+        if move == "U" or "u":
+
+            # These handle the rotate around the edges of the moved side
             newf1=r1
             newf2=r2
             newf3=r3
@@ -239,6 +325,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             b2=newb2
             b3=newb3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=t7
+            newtop2=t4
+            newtop3=t1
+            newtop4=t8
+            newtop6=t2
+            newtop7=t9
+            newtop8=t6
+            newtop9=t3
+
+            t1=newtop1
+            t2=newtop2
+            t3=newtop3
+            t4=newtop4
+            t6=newtop6
+            t7=newtop7
+            t8=newtop8
+            t9=newtop9
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -247,8 +352,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
-        if move == "U'":
-            # U move affects Front, Right, Left, Back
+        if move == "U'" or "u'":
+
+            # These handle the rotate around the edges of the moved side
             newf1=l1
             newf2=l2
             newf3=l3
@@ -275,6 +381,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             l2=newl2
             l3=newl3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=u3
+            newtop2=u6
+            newtop3=u9
+            newtop4=u2
+            newtop6=u8
+            newtop7=u1
+            newtop8=u4
+            newtop9=u7
+
+            u1=newtop1
+            u2=newtop2
+            u3=newtop3
+            u4=newtop4
+            u6=newtop6
+            u7=newtop7
+            u8=newtop8
+            u9=newtop9
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -282,8 +407,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
-        if move == "B":
-            #B Move affects Right, Top, Left, Bottom
+        if move == "B" or "b":
+
+            # These handle the rotate around the edges of the moved side
             newr1=u9
             newr2=u8
             newr3=u7
@@ -310,6 +436,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             u8=newu2
             u9=newu3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=b7
+            newtop2=b4
+            newtop3=b1
+            newtop4=b8
+            newtop6=b2
+            newtop7=b9
+            newtop8=b6
+            newtop9=b3
+
+            b1=newtop1
+            b2=newtop2
+            b3=newtop3
+            b4=newtop4
+            b6=newtop6
+            b7=newtop7
+            b8=newtop8
+            b9=newtop9
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -317,8 +462,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
-        if move == "B'":
-            #B Move affects Right, Top, Left, Bottom
+        if move == "B'" or "b'":
+
+            # These handle the rotate around the edges of the moved side
             newr1=t1
             newr2=t2
             newr3=t3
@@ -345,6 +491,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             u8=newu2
             u9=newu3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=b3
+            newtop2=b6
+            newtop3=b9
+            newtop4=b2
+            newtop6=b8
+            newtop7=b1
+            newtop8=b4
+            newtop9=b7
+
+            b1=newtop1
+            b2=newtop2
+            b3=newtop3
+            b4=newtop4
+            b6=newtop6
+            b7=newtop7
+            b8=newtop8
+            b9=newtop9
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -352,8 +517,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
-        if move == "L":
-            #L move affects Front, Top, Back, Bottom
+        if move == "L" or "l":
+
+            # These handle the rotate around the edges of the moved side
             newt1=b9
             newt2=b6
             newt3=b3
@@ -380,6 +546,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             f4=newf2
             f7=newf3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=l7
+            newtop2=l4
+            newtop3=l1
+            newtop4=l8
+            newtop6=l2
+            newtop7=l9
+            newtop8=l6
+            newtop9=l3
+
+            l1=newtop1
+            l2=newtop2
+            l3=newtop3
+            l4=newtop4
+            l6=newtop6
+            l7=newtop7
+            l8=newtop8
+            l9=newtop9
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -388,8 +573,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
         
-        if move == "L'":
-            #L move affects Front, Top, Back, Bottom
+        if move == "L'" or "l'":
+
+            # These handle the rotate around the edges of the moved side
             newt1=f1
             newt2=f4
             newt3=f7
@@ -416,6 +602,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             f4=newf2
             f7=newf3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=b3
+            newtop2=b6
+            newtop3=b9
+            newtop4=b2
+            newtop6=b8
+            newtop7=b1
+            newtop8=b4
+            newtop9=b7
+
+            b1=newtop1
+            b2=newtop2
+            b3=newtop3
+            b4=newtop4
+            b6=newtop6
+            b7=newtop7
+            b8=newtop8
+            b9=newtop9
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -423,8 +628,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
-        if move == "D":
-            #D move affects Front, Right, Back, Left
+        if move == "D" or "d":
+
+            # These handle the rotate around the edges of the moved side
             newf1=l7
             newf2=l8
             newf3=l9
@@ -452,6 +658,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             l8=newl2
             l9=newl3
 
+            #This handles the rotation of the square that is being moved
+            newtop1=u7
+            newtop2=u4
+            newtop3=u1
+            newtop4=u8
+            newtop6=u2
+            newtop7=u9
+            newtop8=u6
+            newtop9=u3
+
+            u1=newtop1
+            u2=newtop2
+            u3=newtop3
+            u4=newtop4
+            u6=newtop6
+            u7=newtop7
+            u8=newtop8
+            u9=newtop9
+
             cont = input("Would you like to make another move? ")
 
             if cont == "yes":
@@ -460,8 +685,9 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             if cont == "no":
                 Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
         
-        if move == "D'":
-            #D move affects Front, Right, Back, Left
+        if move == "D'" or "d'":
+
+            # These handle the rotate around the edges of the moved side
             newf1=r7
             newf2=r8
             newf3=r9
@@ -474,7 +700,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             newl1=f7
             newl2=f8
             newl3=f9
-
+            
 
             f7=newf1
             f8=newf2
@@ -488,6 +714,25 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             l7=newl1
             l8=newl2
             l9=newl3
+
+            #This handles the rotation of the square that is being moved
+            newtop1=u3
+            newtop2=u6
+            newtop3=u9
+            newtop4=u2
+            newtop6=u8
+            newtop7=u1
+            newtop8=u4
+            newtop9=u7
+
+            u1=newtop1
+            u2=newtop2
+            u3=newtop3
+            u4=newtop4
+            u6=newtop6
+            u7=newtop7
+            u8=newtop8
+            u9=newtop9
 
             cont = input("Would you like to make another move? ")
 
