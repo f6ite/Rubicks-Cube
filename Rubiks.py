@@ -29,11 +29,11 @@ def Main():
 
     ################################################################
 
-    Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
+    Rubiks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
 def Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9):
     #There's probably a better way to do this, but this will work for demonstration purposes
-    print("The completed Rubicks cube is as follows:")
+    print("The completed Rubiks cube is as follows:")
     print("Front Face:")
     print(f1 + " " + f2 + " " + f3)
     print(f4 + " " + f5 + " " + f6)
@@ -64,8 +64,17 @@ def Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r
     print(u4 + " " + u5 + " " + u6)
     print(u7 + " " + u8 + " " + u9)
 
-def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9):
-        move = input("Please type first move (F, F', R, R', U, U', B, B', L, L', D, D', where ' denotes an anticlockwise move ")
+def Continuation():
+            cont = input("Would you like to make another move? ")
+
+            if cont == "yes" or "Yes":
+                Rubiks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
+
+            if cont == "no" or "No":
+                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
+
+def Rubiks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9):
+        move = input("Please type a move (F, F', R, R', U, U', B, B', L, L', D, D', where ' denotes an anticlockwise move ")
 
         ##################
         # Move instances #
@@ -119,13 +128,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             f8=newtop8
             f9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes" or "Yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
-            if cont == "no" or "No":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
+            Continuation()(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
         
         if move == "F'" or "f'":
 
@@ -176,13 +179,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             f9=newtop9
 
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
+            Continuation()(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
 
         if move == "R" or "r":
 
@@ -232,14 +229,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             r8=newtop8
             r9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-        
+Continuation()
         if move == "R'" or "r'":
 
             # These handle the rotate around the edges of the moved side
@@ -288,14 +278,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             r8=newtop8
             r9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
+Continuation()
         if move == "U" or "u":
 
             # These handle the rotate around the edges of the moved side
@@ -344,14 +327,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             t8=newtop8
             t9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
+Continuation()
         if move == "U'" or "u'":
 
             # These handle the rotate around the edges of the moved side
@@ -400,13 +376,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             u8=newtop8
             u9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
+Continuation()
         if move == "B" or "b":
 
             # These handle the rotate around the edges of the moved side
@@ -455,13 +425,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             b8=newtop8
             b9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
+Continuation()
         if move == "B'" or "b'":
 
             # These handle the rotate around the edges of the moved side
@@ -510,13 +474,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             b8=newtop8
             b9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
+Continuation()
         if move == "L" or "l":
 
             # These handle the rotate around the edges of the moved side
@@ -564,15 +522,8 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             l7=newtop7
             l8=newtop8
             l9=newtop9
-
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-        
+            
+Continuation()
         if move == "L'" or "l'":
 
             # These handle the rotate around the edges of the moved side
@@ -621,13 +572,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             b8=newtop8
             b9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
+Continuation()
         if move == "D" or "d":
 
             # These handle the rotate around the edges of the moved side
@@ -677,14 +622,7 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             u8=newtop8
             u9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-        
+Continuation()
         if move == "D'" or "d'":
 
             # These handle the rotate around the edges of the moved side
@@ -734,11 +672,5 @@ def Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5
             u8=newtop8
             u9=newtop9
 
-            cont = input("Would you like to make another move? ")
-
-            if cont == "yes":
-                Rubicks(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-            if cont == "no":
-                Complete(f1,f2,f3,f4,f5,f6,f7,f8,f9,l1,l2,l3,l4,l5,l6,l7,l8,l9,r1,r2,r3,r4,r5,r6,r7,r8,r9,u1,u2,u3,u4,u5,u6,u7,u8,u9,t1,t2,t3,t4,t5,t6,t7,t8,t9,b1,b2,b3,b4,b5,b6,b7,b8,b9)
-
+Continuation()
 Main()
